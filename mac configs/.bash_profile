@@ -22,12 +22,15 @@ alias gpull='git pull'
 alias gpush='git push'
 alias gprune='git remote prune origin'
 alias gdump='git add . && git stash save && git stash drop && git status'
+alias gmaster='git checkout master'
+alias gfresh='git checkout master && git pull && git remote prune origin'
 
 # --------------------------
 # ---- add Java to path ----
 # --------------------------
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
+
 
 # -------------------------------------
 # ---- Android tools and build-tools to path ----
@@ -40,9 +43,25 @@ export PATH=$PATH:~/development/sdk/tools
 # -------------------------------------
 export PATH=$PATH:$GRADLE_HOME/bin
 
+# -----------------------------------------------------------------------------------------
+# ---- add dex-methods-count to path (https://github.com/mihaip/dex-method-counts) --------
+# -----------------------------------------------------------------------------------------
+export PATH=$PATH:~/development/dex-method-counts
 
 # -----------------------------------------------------------------------
 # ---- show/hide hidden files in Finder with terminal alias -------------
 # -----------------------------------------------------------------------
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+
+# -----------------------------------------------
+# ------- Hierarchy Viewer Variable  ------------
+# -----------------------------------------------
+export ANDROID_HVPROTO=ddm
+
+
+# -------------------------------------------
+# ---- add GenyMotion's gmtool to path ------
+# -------------------------------------------
+export PATH=$PATH:/Applications/Genymotion.app/Contents/MacOS
