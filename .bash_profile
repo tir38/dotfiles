@@ -1,7 +1,7 @@
 # ——————
 # — root user dir
 # ——————
-export USER_DIR=/Users/jasonatwood/development/dotfiles
+export DOT_FILES=~/development/dotfiles
 
 
 # ———
@@ -20,7 +20,7 @@ export LSCOLORS="gxfxcxdxbxegedabagacad"
 # --------------------------
 # ---- git auto complete (https://gist.github.com/nolanlawson/8694399) —
 # --------------------------
-source $USER_DIR/git-completion/git-completion.bash
+source $DOT_FILES/git-completion/git-completion.bash
 alias gs='git status'
 alias gb='git branch'
 alias gf='git fetch'
@@ -41,7 +41,7 @@ export PATH=$PATH:$GRADLE_HOME/bin
 # -----------------------------------------------------------------------------------------
 # ---- add dex-methods-count to path (https://github.com/mihaip/dex-method-counts) --------
 # -----------------------------------------------------------------------------------------
-export PATH=$PATH:$USER_DIR/development/dex-method-counts
+export PATH=$PATH:$DOT_FILES/development/dex-method-counts
 
 
 # -----------------------------------------------------------------------
@@ -76,12 +76,25 @@ export PATH=$PATH:~/development/pidcat
 #}
 
 # ------------------------------------------------------------------------------------------------
-# ---- Add Gradle Tab Completion to source (https://gist.github.com/nolanlawson/8694399) ---------
+# ---- Add Gradle Tab Completion to source (https://gist.github.com/Ea87/46401a96df31cd208a87) ---------
 # ------------------------------------------------------------------------------------------------
-source $USER_DIR/gradle-tab-completion/gradle-tab-completion.bash
+source $DOT_FILES/gradle-tab-completion/gradle-tab-completion.bash
+# may need to install md5sha1sum via: brew install  md5sha1sum
 
 
 # -------------------------------------------
 # — add z to path (https://github.com/rupa/z) —
 # -------------------------------------------
-source $USER_DIR/z/z.sh
+source $DOT_FILES/z/z.sh
+
+
+# -------------------------------------------
+# — add RVM to path —	
+# -------------------------------------------
+source ~/.rvm/scripts/rvm
+
+
+# ------------------------------------------------
+# ---- Add Android SDK platform-tools to path —
+# ------------------------------------------------
+export PATH=$PATH:~/Library/Android/sdk/platform-tools
