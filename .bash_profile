@@ -39,10 +39,16 @@ export PATH=$PATH:$GRADLE_HOME/bin
 
 
 # -----------------------------------------------------------------------------------------
-# ---- add dex-methods-count to path; just git submodule init --------
-# ----  (https://github.com/mihaip/dex-method-counts)         --------
+# ---- add dex-methods-count to path
+#
+# setup steps:
+# git submodule init
+# cd dex-method-counts
+# ./gradlew assemble
+#
+# ----  (https://github.com/mihaip/dex-method-counts)
 # -----------------------------------------------------------------------------------------
-export PATH=$PATH:$DOT_FILES/development/dex-method-counts
+export PATH=$PATH:$DOT_FILES/dex-method-counts/
 
 
 # -----------------------------------------------------------------------
