@@ -39,7 +39,8 @@ export PATH=$PATH:$GRADLE_HOME/bin
 
 
 # -----------------------------------------------------------------------------------------
-# ---- add dex-methods-count to path (https://github.com/mihaip/dex-method-counts) --------
+# ---- add dex-methods-count to path; just git submodule init --------
+# ----  (https://github.com/mihaip/dex-method-counts)         --------
 # -----------------------------------------------------------------------------------------
 export PATH=$PATH:$DOT_FILES/development/dex-method-counts
 
@@ -98,3 +99,9 @@ source ~/.rvm/scripts/rvm
 # ---- Add Android SDK platform-tools to path —
 # ------------------------------------------------
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
+
+# —— 
+# — Rize specific aliases
+# ——
+
+alias rizetests='./gradlew clean core:test testCustomerDebugUnitTest'

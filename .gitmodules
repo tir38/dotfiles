@@ -1,0 +1,3 @@
+[submodule "dex-method-counts"]
+	path = dex-method-counts
+	url = https://github.com/mihaip/dex-method-counts
