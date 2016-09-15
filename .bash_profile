@@ -38,16 +38,16 @@ alias gfresh='git checkout master && git pull && git remote prune origin'
 export PATH=$PATH:$GRADLE_HOME/bin
 
 
-# -----------------------------------------------------------------------------------------
+# ------------------------------------
 # ---- add dex-methods-count to path
-#
+# ------------------------------------
 # setup steps:
 # git submodule init
 # cd dex-method-counts
 # ./gradlew assemble
 #
-# ----  (https://github.com/mihaip/dex-method-counts)
-# -----------------------------------------------------------------------------------------
+# Read more at https://github.com/mihaip/dex-method-counts
+# -----------------------------------------------------
 export PATH=$PATH:$DOT_FILES/dex-method-counts/
 
 
@@ -102,9 +102,11 @@ source ~/.rvm/scripts/rvm
 
 
 # ------------------------------------------------
-# ---- Add Android SDK platform-tools to path —
+# ---- Add Android SDK tools and platform-tools to path —
 # ------------------------------------------------
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
+export PATH=$PATH:~/Library/Android/sdk/tools
+
 
 # —— 
 # — Rize specific aliases
