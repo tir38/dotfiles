@@ -24,6 +24,7 @@ source $DOT_FILES/git-completion/git-completion.bash
 alias gs='git status'
 alias gb='git branch'
 alias gf='git fetch'
+alias gcm='git commit -m'
 alias gpull='git pull'
 alias gpush='git push'
 alias gprune='git remote prune origin'
@@ -108,8 +109,15 @@ export PATH=$PATH:~/Library/Android/sdk/platform-tools
 export PATH=$PATH:~/Library/Android/sdk/tools
 
 
+# -------------------------------------------
+# — Go Aliases —	
+# -------------------------------------------
+alias gtest='go test ./...'
+alias gfmt='go fmt ./...'
+alias glint='golint ./...'
+
 # —— 
 # — Rize specific aliases
 # ——
 
-alias rizetests='./gradlew clean core:test testCustomerDebugUnitTest'
+alias rizetests='./gradlew clean core:test database:connectedDebugAndroidTest testCustomerDebugUnitTest connectedCustomerDebugAndroidTest'
