@@ -112,10 +112,13 @@ export PATH=$PATH:~/Library/Android/sdk/tools
 # -------------------------------------------
 # ---- Go Aliases —	
 # -------------------------------------------
-alias gtest='gfmt && go test ./...'
-alias gtestShort='gfmt && go test -short ./...'
+alias gtest='gfmt && grc go test ./...'
+alias gtestShort='gfmt && grc go test -short ./...'
 alias gfmt='go fmt ./...'
 alias glint='golint ./...'
+
+
+
 
 # -------------------------------------------
 # ---- Rize specific aliases
