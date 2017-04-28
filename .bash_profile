@@ -126,8 +126,4 @@ alias glint='golint ./...'
 alias rizetest='./gradlew clean core:test database:test database:connectedDebugAndroidTest testCustomerDebugUnitTest connectedCustomerDebugAndroidTest'
 alias rizelint='./gradlew clean database:lint app:lintCustomerDebug'
 alias rizecheck='./gradlew clean core:checkStyleMain core:checkStyleTest database:androidCheckstyle app:androidCheckstyle'
-
-alias rizetestOld='./gradlew clean core:test testCustomerDebugUnitTest connectedCustomerDebugAndroidTest'
-alias rizelintOld='./gradlew clean app:lintCustomerDebug'
-alias rizecheckOld='./gradlew clean core:checkStyleMain core:checkStyleTest app:androidCheckstyle'
-
+alias rizeall='rizetest && rizelint && rizecheck'
