@@ -124,6 +124,20 @@ alias glint='golint ./...'
 # ---- Rize specific aliases
 # -------------------------------------------
 alias rizetest='./gradlew clean core:test database:test database:connectedDebugAndroidTest testCustomerDebugUnitTest connectedCustomerDebugAndroidTest'
-alias rizelint='./gradlew clean database:lint app:lintCustomerDebug'
+alias rizeunittest='./gradlew clean core:test database:test database:connectedDebugAndroidTest testCustomerDebugUnitTest'
+alias rizelint='./gradlew clean database:lint app:lintCustomerDebug app:lintCustomerRelease'
 alias rizecheck='./gradlew clean core:checkStyleMain core:checkStyleTest database:androidCheckstyle app:androidCheckstyle'
 alias rizeall='rizetest && rizelint && rizecheck'
+alias rizecommitcheck='rizeunittest && rizelint && rizecheck'
+
+
+# -------------------------------------------
+# ---- Buddybuild specific aliases
+# -------------------------------------------
+alias buddytest='./gradlew clean core:test rest:test testDebugUnitTest app:connectedDebugAndroidTest'
+alias buddylint='./gradlew clean rest:lint app:lintDebug app:lintRelease'
+alias buddycheck='./gradlew clean core:checkstyleMain core:checkstyleTest rest:androidCheckstyle app:androidCheckstyle'
+alias buddyall='buddytest && buddylint && buddycheck'
+alias buddybuildcommitcheck='buddytest && buddylint && buddycheck'
+
+
