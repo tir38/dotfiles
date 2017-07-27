@@ -30,7 +30,8 @@ alias gpush='git push'
 alias gprune='git remote prune origin'
 alias gdump='git add . && git stash save && git stash drop && git status'
 alias gmaster='git checkout master'
-alias gfresh='git checkout master && git pull && git remote prune origin'
+alias gdev=‘git checkout development’
+alias gfresh='git checkout master && git pull && git checkout development && git pull && git remote prune origin'
 
 
 # -------------------------------------------
@@ -134,7 +135,7 @@ alias rizecommitcheck='rizeunittest && rizelint && rizecheck'
 # -------------------------------------------
 # ---- Buddybuild specific aliases
 # -------------------------------------------
-alias buddytest='./gradlew clean core:test rest:test testDebugUnitTest app:connectedDebugAndroidTest'
+alias buddytest='./gradlew clean core:test rest:testDebugUnitTest app:connectedDebugAndroidTest'
 alias buddylint='./gradlew clean rest:lint app:lintDebug app:lintRelease'
 alias buddycheck='./gradlew clean core:checkstyleMain core:checkstyleTest rest:androidCheckstyle app:androidCheckstyle'
 alias buddyall='buddytest && buddylint && buddycheck'
