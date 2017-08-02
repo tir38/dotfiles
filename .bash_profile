@@ -30,8 +30,8 @@ alias gpush='git push'
 alias gprune='git remote prune origin'
 alias gdump='git add . && git stash save && git stash drop && git status'
 alias gmaster='git checkout master'
-alias gdev=‘git checkout development’
-alias gfresh='git checkout master && git pull && git checkout development && git pull && git remote prune origin'
+alias gdev=‘git checkout develop’
+alias gfresh='git checkout master && git pull && git checkout develop && git pull && git remote prune origin'
 
 
 # -------------------------------------------
@@ -118,18 +118,6 @@ alias gtestShort='gfmt && grc go test -short ./...'
 alias gfmt='go fmt ./...'
 alias glint='golint ./...'
 
-
-
-
-# -------------------------------------------
-# ---- Rize specific aliases
-# -------------------------------------------
-alias rizetest='./gradlew clean core:test database:test database:connectedDebugAndroidTest testCustomerDebugUnitTest connectedCustomerDebugAndroidTest'
-alias rizeunittest='./gradlew clean core:test database:test database:connectedDebugAndroidTest testCustomerDebugUnitTest'
-alias rizelint='./gradlew clean database:lint app:lintCustomerDebug app:lintCustomerRelease'
-alias rizecheck='./gradlew clean core:checkStyleMain core:checkStyleTest database:androidCheckstyle app:androidCheckstyle'
-alias rizeall='rizetest && rizelint && rizecheck'
-alias rizecommitcheck='rizeunittest && rizelint && rizecheck'
 
 
 # -------------------------------------------
