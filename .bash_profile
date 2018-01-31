@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # -------------------------------------------
 # ---- root user dir
 # -------------------------------------------
@@ -30,8 +32,8 @@ alias gpush='git push'
 alias gprune='git remote prune origin'
 alias gdump='git add . && git stash save && git stash drop && git status'
 alias gmaster='git checkout master'
-alias gdev=‘git checkout develop’
-alias gfresh='git checkout master && git pull && git checkout develop && git pull && git remote prune origin'
+alias gdev='git checkout develop-5.2'
+alias gfresh='git checkout master && git pull && git checkout develop && git pull && git checkout develop-5.2 && git pull && git remote prune origin'
 
 
 # -------------------------------------------
@@ -39,6 +41,12 @@ alias gfresh='git checkout master && git pull && git checkout develop && git pul
 # -------------------------------------------
 export PATH=$PATH:$GRADLE_HOME/bin
 
+
+# -------------------------------------------
+# ---- gradle aliases
+# -------------------------------------------
+alias ginstall='./gradlew installDebug'
+alias gclean='./gradlew clean'
 
 # -------------------------------------------
 # ---- add dex-methods-count to path
@@ -117,16 +125,4 @@ alias gtest='gfmt && grc go test ./...'
 alias gtestShort='gfmt && grc go test -short ./...'
 alias gfmt='go fmt ./...'
 alias glint='golint ./...'
-
-
-
-# -------------------------------------------
-# ---- Buddybuild specific aliases
-# -------------------------------------------
-alias buddytest='./gradlew clean core:test rest:testDebugUnitTest app:connectedDebugAndroidTest'
-alias buddylint='./gradlew clean rest:lint app:lintDebug app:lintRelease'
-alias buddycheck='./gradlew clean core:checkstyleMain core:checkstyleTest rest:androidCheckstyle app:androidCheckstyle'
-alias buddyall='buddytest && buddylint && buddycheck'
-alias buddybuildcommitcheck='buddytest && buddylint && buddycheck'
-
 
