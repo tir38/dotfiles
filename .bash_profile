@@ -126,3 +126,8 @@ alias gtestShort='gfmt && grc go test -short ./...'
 alias gfmt='go fmt ./...'
 alias glint='golint ./...'
 
+
+# -------------------------------------------
+# ---- add my custom android scripts to path ——————
+# -------------------------------------------
+export PATH=$PATH:$DOT_FILES/gradle-android-scripts
