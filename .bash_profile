@@ -32,8 +32,8 @@ alias gpush='git push'
 alias gprune='git remote prune origin'
 alias gdump='git add . && git stash save && git stash drop && git status'
 alias gmaster='git checkout master'
-alias gdev='git checkout develop-5.2'
-alias gfresh='git checkout master && git pull && git checkout develop && git pull && git checkout develop-5.2 && git pull && git remote prune origin'
+alias gdev='git checkout develop'
+alias gfresh='git checkout master && git pull && git checkout develop && git pull && git remote prune origin'
 
 
 # -------------------------------------------
@@ -125,6 +125,12 @@ alias gtest='gfmt && grc go test ./...'
 alias gtestShort='gfmt && grc go test -short ./...'
 alias gfmt='go fmt ./...'
 alias glint='golint ./...'
+
+
+# -------------------------------------------
+# ---- Orion Specific -----------------------
+# -------------------------------------------
+alias installDebug='adb install -r ~/orion/obdroid/onbeep/build/outputs/apk/debug/onbeep-debug.apk'
 
 
 # -------------------------------------------
