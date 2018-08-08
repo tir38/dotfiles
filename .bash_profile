@@ -45,7 +45,8 @@ export PATH=$PATH:$GRADLE_HOME/bin
 # -------------------------------------------
 # ---- gradle aliases
 # -------------------------------------------
-alias ginstall='./gradlew installDebug'
+alias ginstall='./gradlew app:installDebug'
+alias gassemble='./gradlew app:assembleDebug'
 alias gclean='./gradlew clean'
 
 # -------------------------------------------
@@ -130,7 +131,9 @@ alias glint='golint ./...'
 # -------------------------------------------
 # ---- Orion Specific -----------------------
 # -------------------------------------------
-alias installDebug='adb install -r ~/orion/obdroid/onbeep/build/outputs/apk/debug/onbeep-debug.apk'
+alias reinstall='adb install -r ~/orion/obdroid/onbeep/build/outputs/apk/debug/onbeep-debug.apk'
+alias rappInstall='./gradlew rosetta:installDebug'
+alias rappAssemble='./gradlew rosetta:assembleDebug'
 
 
 # -------------------------------------------
