@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# show compile dependencies with highlighting for supplied word for app module and debug build
-echo "highlighting for: $1"
+# show compile dependencies with highlighting for supplied word for module and debug build
+echo "classpath dependencies for $1 module, highlighting $2"
 
 
-./gradlew app:dependencies --configuration debugCompileClasspath | grep --color -E "$1|$"
+./gradlew $1:dependencies --configuration debugCompileClasspath | grep --color -E "$2|$"
 
 
 # code checked via https://www.shellcheck.net/

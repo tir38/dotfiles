@@ -23,6 +23,11 @@ export LSCOLORS="gxfxcxdxbxegedabagacad"
 # ---- git auto complete (https://gist.github.com/nolanlawson/8694399) —
 # -------------------------------------------
 source $DOT_FILES/git-completion/git-completion.bash
+
+
+# -------------------------------------------
+# ---- git aliases
+# -------------------------------------------
 alias gs='git status'
 alias gb='git branch'
 alias gf='git fetch'
@@ -34,7 +39,7 @@ alias gdump='git add . && git stash save && git stash drop && git status'
 alias gmaster='git checkout master'
 alias gdev='git checkout develop'
 alias gfresh='git checkout master && git pull && git checkout develop && git pull && git remote prune origin'
-
+alias magicStash='git stash save -u --keep-index'
 
 # -------------------------------------------
 # ---- add Gradle to path -------------
@@ -131,7 +136,7 @@ alias glint='golint ./...'
 # -------------------------------------------
 # ---- Orion Specific -----------------------
 # -------------------------------------------
-alias reinstall='adb install -r ~/orion/obdroid/onbeep/build/outputs/apk/debug/onbeep-debug.apk'
+alias reinstall='adb install -r ~/orion/obdroid/app/build/outputs/apk/debug/app-debug.apk'
 alias rappInstall='./gradlew rosetta:installDebug'
 alias rappAssemble='./gradlew rosetta:assembleDebug'
 
