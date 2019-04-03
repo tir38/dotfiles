@@ -20,7 +20,7 @@ export LSCOLORS="gxfxcxdxbxegedabagacad"
 
 
 # -------------------------------------------
-# ---- git auto complete (https://gist.github.com/nolanlawson/8694399) —
+# ---- git auto complete (https://github.com/git/git/blob/master/contrib/completion/git-completion.bash) —
 # -------------------------------------------
 source $DOT_FILES/git-completion/git-completion.bash
 
@@ -32,6 +32,7 @@ alias gs='git status'
 alias gb='git branch'
 alias gf='git fetch'
 alias gcm='git commit -m'
+alias gamend='git commit --amend'
 alias gpull='git pull'
 alias gpush='git push'
 alias gprune='git remote prune origin'
@@ -46,13 +47,6 @@ alias magicStash='git stash save -u --keep-index'
 # -------------------------------------------
 export PATH=$PATH:$GRADLE_HOME/bin
 
-
-# -------------------------------------------
-# ---- gradle aliases
-# -------------------------------------------
-alias ginstall='./gradlew app:installDebug'
-alias gassemble='./gradlew app:assembleDebug'
-alias gclean='./gradlew clean'
 
 # -------------------------------------------
 # ---- add dex-methods-count to path
@@ -118,10 +112,12 @@ source ~/.rvm/scripts/rvm
 
 
 # -------------------------------------------
-# ---- Add Android SDK tools and platform-tools to path —
+# ---- Add Android SDK, tools, platform-tools, ARM NDK tools to path —
 # -------------------------------------------
+export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
 export PATH=$PATH:~/Library/Android/sdk/tools
+export PATH=$PATH:~/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin
 
 
 # -------------------------------------------
@@ -136,9 +132,14 @@ alias glint='golint ./...'
 # -------------------------------------------
 # ---- Orion Specific -----------------------
 # -------------------------------------------
+alias ginstall='./gradlew app:installDebug -x countDebugDexMethods'
+alias gassemble='./gradlew app:assembleDebug -x countDebugDexMethods'
+alias gclean='./gradlew clean'
 alias reinstall='adb install -r ~/orion/obdroid/app/build/outputs/apk/debug/app-debug.apk'
-alias rappInstall='./gradlew rosetta:installDebug'
-alias rappAssemble='./gradlew rosetta:assembleDebug'
+alias rappInstall='./gradlew rosetta:installDebug -x countDebugDexMethods'
+alias rappAssemble='./gradlew rosetta:assembleDebug -x countDebugDexMethods'
+export PATH=$PATH:$DOT_FILES/orion
+export PATH=$PATH:~/orion/rosetta-adb-scripts
 
 
 # -------------------------------------------

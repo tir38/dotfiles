@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # show compile dependencies with highlighting for supplied word for module and debug build
-echo "classpath dependencies for $1 module, highlighting $2"
+echo "compile classpath dependencies for $1 module, highlighting $2"
 
 
 ./gradlew $1:dependencies --configuration debugCompileClasspath | grep --color -E "$2|$"

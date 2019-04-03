@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# show runtime dependencies with highlighting for supplied word for module and debug build
+echo "runtime classpath dependencies for $1 module, highlighting $2"
+
+
+./gradlew $1:dependencies --configuration debugRuntimeClasspath | grep --color -E "$2|$"
+
+
+# code checked via https://www.shellcheck.net/
