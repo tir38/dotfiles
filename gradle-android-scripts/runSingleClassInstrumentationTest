@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$*" ]; then
+	echo "Must specify full package/class e.g. com.example.tests.MyTestClass"
+    exit 1
+fi
+
+echo Running app:connectedDebugAndroidTest for: $*
+./gradlew app:connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=$*
