@@ -132,12 +132,12 @@ alias glint='golint ./...'
 # -------------------------------------------
 # ---- Orion Specific -----------------------
 # -------------------------------------------
-alias ginstall='./gradlew app:installDebug -x countDebugDexMethods'
-alias gassemble='./gradlew app:assembleDebug -x countDebugDexMethods'
+alias ginstall='./gradlew app:installDebug'
+alias gassemble='./gradlew app:assembleDebug'
 alias gclean='./gradlew clean'
 alias reinstall='adb install -r ~/orion/obdroid/app/build/outputs/apk/debug/app-debug.apk'
-alias rappInstall='./gradlew rosetta:installDebug -x countDebugDexMethods'
-alias rappAssemble='./gradlew rosetta:assembleDebug -x countDebugDexMethods'
+alias rappInstall='./gradlew rosetta:installDebug'
+alias rappAssemble='./gradlew rosetta:assembleDebug'
 export PATH=$PATH:$DOT_FILES/orion
 export PATH=$PATH:~/orion/rosetta-adb-scripts
 
