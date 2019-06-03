@@ -132,7 +132,7 @@ alias glint='golint ./...'
 # -------------------------------------------
 # ---- Orion Specific -----------------------
 # -------------------------------------------
-alias ginstall='./gradlew app:installDebug'
+alias ginstall='./gradlew app:installDebug && adb shell am start -n com.onbeep.obiwan.debug/com.onbeep.obiwan.venus.splash.SplashActivity'
 alias gassemble='./gradlew app:assembleDebug'
 alias gclean='./gradlew clean'
 alias reinstall='adb install -r ~/orion/obdroid/app/build/outputs/apk/debug/app-debug.apk'
