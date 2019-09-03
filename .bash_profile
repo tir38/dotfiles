@@ -41,6 +41,7 @@ alias gmaster='git checkout master'
 alias gdev='git checkout develop'
 alias gfresh='git checkout master && git pull && git checkout develop && git pull && git remote prune origin'
 alias magicStash='git stash save -u --keep-index'
+alias gitKey='gpg --list-secret-keys --keyid-format LONG'
 
 # -------------------------------------------
 # ---- add Gradle to path -------------

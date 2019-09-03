@@ -6,5 +6,9 @@ echo "runtime classpath dependencies for $1 module, highlighting $2"
 
 ./gradlew $1:dependencies --configuration debugRuntimeClasspath | grep --color -E "$2|$"
 
+]]`
+
+# use for test apk
+# ./gradlew $1:dependencies --configuration debugAndroidTestRuntimeClasspath | grep --color -E "$2|$"
 
 # code checked via https://www.shellcheck.net/
