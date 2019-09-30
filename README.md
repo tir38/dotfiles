@@ -1,8 +1,7 @@
 All of my imported `.bash_profile` snippets and some scripts I've grabbed from around the way for Android development.
 
 
-Update `~./bash_profile`:
-
+1. Update `~./bash_profile`:
 
 ```
 # ——
@@ -10,3 +9,18 @@ Update `~./bash_profile`:
 # ——
 source [repo directory]/dotfiles/.bash_profile
 ```
+
+2. pull submodule(s)
+
+```
+$ git submodule init
+$ git submodule update
+```
+
+3. build dex-methods-count:
+
+```
+$ cd dex-method-counts/
+$ ./gradlew assemble
+```
+

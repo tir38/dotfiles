@@ -141,6 +141,8 @@ alias rappInstall='./gradlew rosetta:installDebug'
 alias rappAssemble='./gradlew rosetta:assembleDebug'
 export PATH=$PATH:$DOT_FILES/orion
 export PATH=$PATH:~/orion/rosetta-adb-scripts
+alias pidcatRapp='pidcat io.orionlabs.android.rosetta.debug'
+alias pidcatApp='pidcat com.onbeep.obiwan.debug'
 
 
 # -------------------------------------------
