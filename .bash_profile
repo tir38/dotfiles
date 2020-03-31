@@ -42,12 +42,21 @@ alias gdev='git checkout develop'
 alias gfresh='git checkout master && git pull && git checkout develop && git pull && git remote prune origin'
 alias magicStash='git stash save -u --keep-index'
 alias gitKey='gpg --list-secret-keys --keyid-format LONG'
+alias git_key='gpg --list-secret-keys --keyid-format LONG'
+alias gitkey='gpg --list-secret-keys --keyid-format LONG'
+alias gcheckout='git fetch && git checkout '
+
 
 # -------------------------------------------
 # ---- add Gradle to path -------------
 # -------------------------------------------
+export GRADLE_HOME=~/.gradle
 export PATH=$PATH:$GRADLE_HOME/bin
 
+# -------------------------------------------
+# ---- Gradle aliases -------------
+# -------------------------------------------
+alias clearGlobalGradleCache='rm -rf $GRADLE_HOME/caches/build-cache-*'
 
 # -------------------------------------------
 # ---- add dex-methods-count to path
@@ -107,18 +116,13 @@ source $DOT_FILES/z/z.sh
 
 
 # -------------------------------------------
-# ---- add RVM to path —	
-# -------------------------------------------
-source ~/.rvm/scripts/rvm
-
-
-# -------------------------------------------
 # ---- Add Android SDK, tools, platform-tools, ARM NDK tools to path —
 # -------------------------------------------
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
 export PATH=$PATH:~/Library/Android/sdk/tools
 export PATH=$PATH:~/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin
+
 
 
 # -------------------------------------------
@@ -135,8 +139,8 @@ alias glint='golint ./...'
 # -------------------------------------------
 alias ginstall='./gradlew app:installDebug && adb shell am start -n com.onbeep.obiwan.debug/com.onbeep.obiwan.venus.splash.SplashActivity'
 alias gassemble='./gradlew app:assembleDebug'
+alias gbundle='./gradlew app:bundleDebug'
 alias gclean='./gradlew clean'
-alias reinstall='adb install -r ~/orion/obdroid/app/build/outputs/apk/debug/app-debug.apk'
 alias rappInstall='./gradlew rosetta:installDebug'
 alias rappAssemble='./gradlew rosetta:assembleDebug'
 export PATH=$PATH:$DOT_FILES/orion
@@ -149,3 +153,5 @@ alias pidcatApp='pidcat com.onbeep.obiwan.debug'
 # ---- add my custom android scripts to path ——————
 # -------------------------------------------
 export PATH=$PATH:$DOT_FILES/gradle-android-scripts
+export PATH=$PATH:~/personal/ax
+source ~/personal/ax/ax_autocomplete.bash

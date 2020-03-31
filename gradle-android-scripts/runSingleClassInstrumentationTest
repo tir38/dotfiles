@@ -1,9 +1,25 @@
 #!/bin/bash
 
-if [ -z "$*" ]; then
-	echo "Must specify full package/class e.g. com.example.tests.MyTestClass"
+if [ -z "$1" ]; then
+	echo "Must specify module (e.g. app)"
     exit 1
 fi
 
-echo Running app:connectedDebugAndroidTest for: $*
-./gradlew app:connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=$*
+if [ -z "$2" ]; then
+	echo "Must specify build type, starting w/ capital letter (e.g. Debug, DebugFree, ReleasePaid)"
+    exit 1
+fi
+
+if [ -z "$3" ]; then
+	echo "Must specify full package name, classname, and (optional) test name. Examples:"
+	echo "com.example.MytestClass"
+	echo "com.example.MytestClass#myTest"
+    exit 1
+fi
+
+echo ===============
+echo Running $1:connected$2AndroidTest for: $3
+echo ===============
+# Sadly we have to pass in fully qualified name
+# Follow for details: https://github.com/android/android-test/issues/495
+./gradlew $1:connected$2AndroidTest -Pandroid.testInstrumentationRunnerArguments.class=$3
