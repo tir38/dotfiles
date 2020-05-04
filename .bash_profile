@@ -78,44 +78,11 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 
-# -------------------------------------------
-# ---- Hierarchy Viewer Variable  ------------
-# -------------------------------------------
-export ANDROID_HVPROTO=ddm
-
-
-# -------------------------------------------
-# ---- add PID Cat (https://github.com/JakeWharton/pidcat) ——————
-# -------------------------------------------
-export PATH=$PATH:~/development/pidcat
-
-
-# -------------------------------------------
-# ---- mount/unmount AOSP dev disk image ----
-# -------------------------------------------
-# function mountAndroid { hdiutil attach /Users/jason/AOSP_contributions/aosp_dev_disk.dmg -mountpoint /Volumes/android; }
-# function unmountAndroid() { hdiutil detach /Volumes/android; }
-
-#export PATH=~/bin:$PATH
-#function repoProjects(){
-#	echo "all AOSP projects:"
-#	repo forall -c 'echo "$REPO_PATH -- $REPO_PROJECT"'
-#}
-
 
 # -------------------------------------------
 # ---- add z to path (https://github.com/rupa/z) —
 # -------------------------------------------
 source $DOT_FILES/z/z.sh
-
-
-# -------------------------------------------
-# ---- Add Android SDK, tools, platform-tools, ARM NDK tools to path —
-# -------------------------------------------
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=$PATH:~/Library/Android/sdk/platform-tools
-export PATH=$PATH:~/Library/Android/sdk/tools
-export PATH=$PATH:~/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin
 
 
 # -------------------------------------------
@@ -134,17 +101,9 @@ alias ginstall='./gradlew app:installDebug && adb shell am start -n com.onbeep.o
 alias gassemble='./gradlew app:assembleDebug'
 alias gbundle='./gradlew app:bundleDebug'
 alias gclean='./gradlew clean'
-alias rappInstall='./gradlew rosetta:installDebug'
-alias rappAssemble='./gradlew rosetta:assembleDebug'
-export PATH=$PATH:$DOT_FILES/orion
-export PATH=$PATH:~/orion/rosetta-adb-scripts
-alias pidcatRapp='pidcat io.orionlabs.android.rosetta.debug'
-alias pidcatApp='pidcat com.onbeep.obiwan.debug'
 
 
 # -------------------------------------------
 # ---- add my custom android scripts to path ——————
 # -------------------------------------------
 export PATH=$PATH:$DOT_FILES/gradle-android-scripts
-export PATH=$PATH:~/personal/ax
-source ~/personal/ax/ax_autocomplete.bash
