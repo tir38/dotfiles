@@ -102,12 +102,6 @@ export PATH=$PATH:~/development/pidcat
 #	repo forall -c 'echo "$REPO_PATH -- $REPO_PROJECT"'
 #}
 
-# -------------------------------------------
-# ---- Add Gradle Tab Completion to source (https://gist.github.com/Ea87/46401a96df31cd208a87) ---------
-# -------------------------------------------
-source $DOT_FILES/gradle-tab-completion/gradle-tab-completion.bash
-# may need to install md5sha1sum via: brew install  md5sha1sum
-
 
 # -------------------------------------------
 # ---- add z to path (https://github.com/rupa/z) —
@@ -122,7 +116,6 @@ export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
 export PATH=$PATH:~/Library/Android/sdk/tools
 export PATH=$PATH:~/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin
-
 
 
 # -------------------------------------------
