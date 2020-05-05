@@ -48,6 +48,14 @@ alias gcheckout='git fetch && git checkout '
 
 
 # -------------------------------------------
+# ---- add Android Home and platform tools to path  -------------
+# ----      needed for ADB  -------------
+# -------------------------------------------
+export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+
+# -------------------------------------------
 # ---- add Gradle to path -------------
 # -------------------------------------------
 export GRADLE_HOME=~/.gradle
