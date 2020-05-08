@@ -11,15 +11,17 @@ if [ -z "$2" ]; then
 fi
 
 if [ -z "$3" ]; then
-	echo "Must specify full package name, classname, and (optional) test name. Examples:"
-	echo "com.example.MytestClass"
-	echo "com.example.MytestClass#myTest"
-    exit 1
+	echo "Must specify package/class/test/regex. Examples:"
+	echo "* fully qualified class: com.example.MytestClass"
+	echo "* fully qualified method: com.example.MytestClass#myTest"
+	echo "* wildcard on package: com.example.*"
+	echo "* wildcard on class: MytestClass*"
+	echo "* wildcard on method: methodname*"
+	echo "(note: does not support leading wildcard e.g. *TestClass)"
+  exit 1
 fi
 
 echo ===============
 echo Running $1:connected$2AndroidTest for: $3
 echo ===============
-# Sadly we have to pass in fully qualified name
-# Follow for details: https://github.com/android/android-test/issues/495
-./gradlew $1:connected$2AndroidTest -Pandroid.testInstrumentationRunnerArguments.class=$3
+./gradlew $1:connected$2AndroidTest -Pandroid.testInstrumentationRunnerArguments.tests_regex=$3
