@@ -46,13 +46,18 @@ alias git_key='gpg --list-secret-keys --keyid-format LONG'
 alias gitkey='gpg --list-secret-keys --keyid-format LONG'
 alias gcheckout='git fetch && git checkout '
 
-
 # -------------------------------------------
 # ---- add Android Home and platform tools to path  -------------
 # ----      needed for ADB  -------------
 # -------------------------------------------
-export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+
+# TODO because of a bug with sdkmanager (as installed by Brew)
+# it installs sdk components into a CaskRoom
+# 		/usr/local/Caskroom/android-sdk/XXXX 
+# you may need to update this
+export ANDROID_HOME=/usr/local/Caskroom/android-sdk/4333796
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
 
 
 # -------------------------------------------
