@@ -1,0 +1,11 @@
+#!/bin/sh                                                                                                                                                                                                                                                               
+# pre-push hook that will checkstyle pass before pushing                                                                                                                                                                                                                
+echo running pre-push checks
+./dev_resources/all_checkstyle.sh
+RESULT=$?
+if [ $RESULT -ne 0 ]; then
+ echo failed checkstyle checks
+  exit 1
+  fi
+  echo passed commit checks
+  exit 0

@@ -11,6 +11,8 @@ export DOT_FILES=~/dotfiles
 # -------------------------------------------
 alias ll="ls -al"
 
+alias bbedit="open -a BBEdit "
+
 
 # -------------------------------------------
 # ---- make 'ls' colorized —
