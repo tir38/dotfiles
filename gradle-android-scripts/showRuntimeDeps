@@ -3,7 +3,7 @@
 # show runtime dependencies with highlighting for supplied word for module and debug build
 echo "runtime classpath dependencies for $1 module, highlighting $2"
 
-# ./gradlew $1:dependencies --configuration debugRuntimeClasspath --scan | grep --color -E "$2|$"
+./gradlew $1:dependencies --configuration debugRuntimeClasspath --scan | grep --color -E "$2|$"
 
 # use for test apk
-./gradlew $1:dependencies --configuration dogfoodAndroidTestRuntimeClasspath | grep --color -E "$2|$"
+# ./gradlew $1:dependencies --configuration debugAndroidTestRuntimeClasspath | grep --color -E "$2|$"

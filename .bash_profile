@@ -122,3 +122,11 @@ alias gclean='./gradlew clean'
 # ---- add my custom android scripts to path ——————
 # -------------------------------------------
 export PATH=$PATH:$DOT_FILES/gradle-android-scripts
+export PATH=$PATH:~/personal/ADBX
+
+# --------------
+# ---- Add chruby to path and set default
+# ----------
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-2.7.1
