@@ -6,11 +6,16 @@
 export DOT_FILES=~/dotfiles
 
 
+# ---- add private dot_files to path ——————
+# -------------------------------------------
+DOT_FILES_PRIVATE=~/dotfiles_private
+export PATH=$PATH:$DOT_FILES_PRIVATE
+
+
 # -------------------------------------------
 # ---- general aliases —
 # -------------------------------------------
 alias ll="ls -al"
-
 alias bbedit="open -a BBEdit "
 
 
@@ -30,48 +35,58 @@ source $DOT_FILES/git-completion/git-completion.bash
 # -------------------------------------------
 # ---- git aliases
 # -------------------------------------------
-alias gs='git status'
+#USE gs script instead: alias gs='git status'
 alias gb='git branch'
 alias gf='git fetch'
+alias gadd='git add .'
+alias gc='git commit'
 alias gcm='git commit -m'
 alias gamend='git commit --amend'
 alias gpull='git pull'
 alias gpush='git push'
 alias gprune='git remote prune origin'
 alias gdump='git add . && git stash save && git stash drop && git status'
-alias gmaster='git checkout master'
-alias gdev='git checkout develop'
-alias gfresh='git checkout master && git pull && git checkout develop && git pull && git remote prune origin'
+alias gmaster='git checkout green-master'
+alias gfresh='git checkout green-master && git pull && git remote prune origin'
 alias magicStash='git stash save -u --keep-index'
 alias gitKey='gpg --list-secret-keys --keyid-format LONG'
 alias git_key='gpg --list-secret-keys --keyid-format LONG'
 alias gitkey='gpg --list-secret-keys --keyid-format LONG'
 alias gcheckout='git fetch && git checkout '
 
+
 # -------------------------------------------
-# ---- add Android Home and platform tools to path  -------------
-# ----      needed for ADB  -------------
+# ---- add Android Home, command line tools, platform tools, and emulator to path  -------------
 # -------------------------------------------
 
 # TODO because of a bug with sdkmanager (as installed by Brew)
 # it installs sdk components into a CaskRoom
 # 		/usr/local/Caskroom/android-sdk/XXXX 
 # you may need to update this
-export ANDROID_HOME=/usr/local/Caskroom/android-sdk/4333796
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+#export ANDROID_HOME=/usr/local/Caskroom/android-sdk/433379#6
 
+# For now we are manually installing SDK tools (see android_machine_setup/.setup_android_tools
+# ANDROID_HOME is deprecated, keep for now
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/emulator:$PATH"
 
-
-# -------------------------------------------
+ -------------------------------------------
 # ---- add Gradle to path -------------
 # -------------------------------------------
 export GRADLE_HOME=~/.gradle
 export PATH=$PATH:$GRADLE_HOME/bin
 
+
 # -------------------------------------------
 # ---- Gradle aliases -------------
 # -------------------------------------------
-alias clearGlobalGradleCache='rm -rf $GRADLE_HOME/caches/build-cache-*'
+alias gNukeBuildCache='rm -rf $GRADLE_HOME/caches/build-cache-*'
+alias gNukeConfigurationCache='rm -rf .gradle/configuration-cache/'
+alias gclean='./gradlew clean'
+
 
 # -------------------------------------------
 # ---- add dex-methods-count to path
@@ -93,7 +108,6 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 
-
 # -------------------------------------------
 # ---- add z to path (https://github.com/rupa/z) —
 # -------------------------------------------
@@ -110,19 +124,20 @@ alias glint='golint ./...'
 
 
 # -------------------------------------------
-# ---- Orion Specific -----------------------
+# ---- Square Specific -----------------------
 # -------------------------------------------
-alias ginstall='./gradlew app:installDebug && adb shell am start -n com.onbeep.obiwan.debug/com.onbeep.obiwan.venus.splash.SplashActivity'
-alias gassemble='./gradlew app:assembleDebug'
-alias gbundle='./gradlew app:bundleDebug'
-alias gclean='./gradlew clean'
-
-
+alias retail_build='./gradlew --configuration-cache --configuration-cache-problems=warn :squid:x2-retail:x2-retail-pos-app:assembleDebug'
+alias retail_install='./gradlew --configuration-cache --configuration-cache-problems=warn :squid:x2-retail:x2-retail-pos-app:installDebug'
+alias retail_start='adb shell am start -n com.squareup.retail/com.squareup.ui.PaymentActivity'
+alias retail_unit_tests='./gradlew -p retail testDebug && ./gradlew -p squid/x2-retail testDebug'
+alias retail_install_and_start='retail_install && retail_start'
 # -------------------------------------------
 # ---- add my custom android scripts to path ——————
 # -------------------------------------------
 export PATH=$PATH:$DOT_FILES/gradle-android-scripts
 export PATH=$PATH:~/personal/ADBX
+
+
 
 # --------------
 # ---- Add chruby to path and set default
