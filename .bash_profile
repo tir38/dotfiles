@@ -63,7 +63,13 @@ alias gcheckout='git fetch && git checkout '
 # it installs sdk components into a CaskRoom
 # 		/usr/local/Caskroom/android-sdk/XXXX 
 # you may need to update this
-#export ANDROID_HOME=/usr/local/Caskroom/android-sdk/433379#6
+## Update: because I am now (temporarily) instaling command line tools manually. I can at least revert back to 
+# the "correct" location for home/sdk root
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
+# Lastly, we need to add cmdline-tools to path. This gets complicated. The cmdline-tools we add manually are in sdk/cmdline-tools/latest. But later those very same cmdline tools will use sdkmanager to re-download them into /sdk ... don't ask
+export PATH=${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin
 
 # For now we are manually installing SDK tools (see android_machine_setup/.setup_android_tools
 # ANDROID_HOME is deprecated, keep for now
@@ -86,6 +92,7 @@ export PATH=$PATH:$GRADLE_HOME/bin
 alias gNukeBuildCache='rm -rf $GRADLE_HOME/caches/build-cache-*'
 alias gNukeConfigurationCache='rm -rf .gradle/configuration-cache/'
 alias gclean='./gradlew clean'
+
 
 
 # -------------------------------------------
@@ -138,10 +145,13 @@ export PATH=$PATH:$DOT_FILES/gradle-android-scripts
 export PATH=$PATH:~/personal/ADBX
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> b2cdb527f7d8dcbe2ba9c92e43e895d1021fbcb2
 # --------------
 # ---- Add chruby to path and set default
 # ----------
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-2.7.1
+#source /usr/local/opt/chruby/share/chruby/chruby.sh
+#source /usr/local/opt/chruby/share/chruby/auto.sh
+#chruby ruby-2.7.1
