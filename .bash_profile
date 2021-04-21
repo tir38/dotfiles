@@ -57,9 +57,14 @@ alias gcheckout='git fetch && git checkout '
 # it installs sdk components into a CaskRoom
 # 		/usr/local/Caskroom/android-sdk/XXXX 
 # you may need to update this
-export ANDROID_HOME=/usr/local/Caskroom/android-sdk/4333796
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
+## Update: because I am now (temporarily) instaling command line tools manually. I can at least revert back to 
+# the "correct" location for home/sdk root
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
+# Lastly, we need to add cmdline-tools to path. This gets complicated. The cmdline-tools we add manually are in sdk/cmdline-tools/latest. But later those very same cmdline tools will use sdkmanager to re-download them into /sdk ... don't ask
+export PATH=${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin
 
 
 # -------------------------------------------
@@ -68,10 +73,12 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export GRADLE_HOME=~/.gradle
 export PATH=$PATH:$GRADLE_HOME/bin
 
+
 # -------------------------------------------
 # ---- Gradle aliases -------------
 # -------------------------------------------
 alias clearGlobalGradleCache='rm -rf $GRADLE_HOME/caches/build-cache-*'
+
 
 # -------------------------------------------
 # ---- add dex-methods-count to path
@@ -91,7 +98,6 @@ export PATH=$PATH:$DOT_FILES/dex-method-counts/
 # -------------------------------------------
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-
 
 
 # -------------------------------------------
@@ -124,9 +130,10 @@ alias gclean='./gradlew clean'
 export PATH=$PATH:$DOT_FILES/gradle-android-scripts
 export PATH=$PATH:~/personal/ADBX
 
+
 # --------------
 # ---- Add chruby to path and set default
 # ----------
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-2.7.1
+#source /usr/local/opt/chruby/share/chruby/chruby.sh
+#source /usr/local/opt/chruby/share/chruby/auto.sh
+#chruby ruby-2.7.1
