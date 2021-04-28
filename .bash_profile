@@ -145,10 +145,6 @@ export PATH=$PATH:$DOT_FILES/gradle-android-scripts
 export PATH=$PATH:~/personal/ADBX
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b2cdb527f7d8dcbe2ba9c92e43e895d1021fbcb2
 # --------------
 # ---- Add chruby to path and set default
 # ----------
