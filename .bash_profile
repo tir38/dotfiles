@@ -73,7 +73,7 @@ export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$ANDROID_HOME/emulator:$PATH"
 
- -------------------------------------------
+# -------------------------------------------
 # ---- add Gradle to path -------------
 # -------------------------------------------
 export GRADLE_HOME=~/.gradle
@@ -142,6 +142,6 @@ export PATH=$PATH:~/personal/ADBX
 # --------------
 # ---- Add chruby to path and set default
 # ----------
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-2.7.1
+#source /usr/local/opt/chruby/share/chruby/chruby.sh
+#source /usr/local/opt/chruby/share/chruby/auto.sh
+#chruby ruby-2.7.1
