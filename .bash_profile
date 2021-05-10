@@ -79,7 +79,7 @@ export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$ANDROID_HOME/emulator:$PATH"
 
- -------------------------------------------
+# -------------------------------------------
 # ---- add Gradle to path -------------
 # -------------------------------------------
 export GRADLE_HOME=~/.gradle
@@ -135,6 +135,7 @@ alias glint='golint ./...'
 # -------------------------------------------
 alias retail_build='./gradlew --configuration-cache --configuration-cache-problems=warn :squid:x2-retail:x2-retail-pos-app:assembleDebug'
 alias retail_install='./gradlew --configuration-cache --configuration-cache-problems=warn :squid:x2-retail:x2-retail-pos-app:installDebug'
+alias retail_install_no_cc='./gradlew :squid:x2-retail:x2-retail-pos-app:installDebug'
 alias retail_start='adb shell am start -n com.squareup.retail/com.squareup.ui.PaymentActivity'
 alias retail_unit_tests='./gradlew -p retail testDebug && ./gradlew -p squid/x2-retail testDebug'
 alias retail_install_and_start='retail_install && retail_start'
