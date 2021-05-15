@@ -32,6 +32,11 @@ export LSCOLORS="gxfxcxdxbxegedabagacad"
 source $DOT_FILES/git-completion/git-completion.bash
 
 
+# ---------
+# --- add java home
+# --------
+export JAVA_HOME=`/usr/libexec/java_home`
+
 # -------------------------------------------
 # ---- git aliases
 # -------------------------------------------
@@ -55,7 +60,6 @@ alias gitkey='gpg --list-secret-keys --keyid-format LONG'
 alias gcheckout='git fetch && git checkout '
 
 
-# -------------------------------------------
 # ---- add Android Home, command line tools, platform tools, and emulator to path  -------------
 # -------------------------------------------
 
