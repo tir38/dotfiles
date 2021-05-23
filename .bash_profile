@@ -139,6 +139,8 @@ alias retail_install_no_cc='./gradlew :squid:x2-retail:x2-retail-pos-app:install
 alias retail_start='adb shell am start -n com.squareup.retail/com.squareup.ui.PaymentActivity'
 alias retail_unit_tests='./gradlew -p retail testDebug && ./gradlew -p squid/x2-retail testDebug'
 alias retail_install_and_start='retail_install && retail_start'
+alias retail_fix='./gradlew :retail:home-applet:ktlintFormat'
+
 # -------------------------------------------
 # ---- add my custom android scripts to path ——————
 # -------------------------------------------
